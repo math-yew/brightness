@@ -1,6 +1,6 @@
 // src/app/anxiety-counseling/[city]/page.tsx
 import Navbar from '../../../components/Navbar';
-import CityContent from './CityContent';
+import CityContent from '../CityContent';
 
 export async function generateStaticParams() {
   return [

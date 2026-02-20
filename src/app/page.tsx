@@ -1,9 +1,10 @@
 "use client";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import { motion } from 'framer-motion';
 
 export default function Home() {
+  const [redirectUrl, setRedirectUrl] = useState('');
   const [status, setStatus] = useState({
     submitted: false,
     submitting: false,
@@ -22,6 +23,12 @@ export default function Home() {
     firstName: '',
     lastName: ''
   });
+
+  useEffect(() => {
+  const origin = window.location.origin;
+  const path = window.location.pathname === '/' ? '' : window.location.pathname.replace(/\/$/, "");
+  setRedirectUrl(`${origin}${path}/success?from=${path || '/'}`);
+}, []);
 
   const handleInputChange = (e:any) => {
     setFormData({
@@ -105,16 +112,18 @@ export default function Home() {
           <motion.div className="bg-black/30 backdrop-blur-xl p-8 rounded-[2rem] border border-white/20 shadow-2xl">
             <form 
               action="https://api.staticforms.xyz/submit" 
-              method="POST" 
+              method="POST"
+              autoComplete="off"
               className="grid grid-cols-2 gap-4 text-white"
             >
+              <input type="text" name="honeypot" style={{ display: 'none' }} />
               {/* Replace with your key */}
               <input type="hidden" name="accessKey" value="sf_309l6lj7mj6h8f1f2f1e405b" />
               
               {/* Tell StaticForms where to send the user after they hit submit */}
-              <input type="hidden" name="redirectTo" value="https://your-username.github.io/your-repo/success" />
+              <input type="hidden" name="redirectTo" value={redirectUrl} />
               {/* Anti-Spam Honeypot (Hidden from users) */}
-              <input type="text" name="honeypot" style={{ display: 'none' }} onChange={handleInputChange} />
+              {/* <input type="text" name="honeypot" style={{ display: 'none' }} onChange={handleInputChange} /> */}
 
               <div className="col-span-1 text-left">
                 <label className="text-[10px] uppercase font-bold tracking-widest mb-1 block opacity-70">How did you hear?</label>

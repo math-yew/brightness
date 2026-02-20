@@ -1,11 +1,10 @@
-// src/app/anxiety-counseling/[city]/CityContent.tsx
 "use client";
 import { motion } from 'framer-motion';
 
 export default function CityContent({ citySlug }) {
-  // Safety check: If citySlug is undefined, don't try to split it yet
   if (!citySlug) return null;
 
+  // Formatting "fort-collins" -> "Fort Collins"
   const cityName = citySlug
     .split('-')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
@@ -14,14 +13,24 @@ export default function CityContent({ citySlug }) {
   return (
     <div className="font-montserrat">
       <section className="pt-40 pb-20 bg-emerald-50 px-6">
+        <div className="max-w-4xl mx-auto text-center">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-6xl font-bold text-gray-900 mb-6"
           >
-            Anxiety Counseling in {cityName}, CO
+            Anxiety Counseling in {cityName}
           </motion.h1>
-       </section>
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="text-lg text-gray-600 leading-relaxed"
+          >
+            Providing specialized ACT therapy to help you live a life guided by your values, not your fears.
+          </motion.p>
+        </div>
+      </section>
 
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
