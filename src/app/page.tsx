@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import { motion } from 'framer-motion';
+import SiteFooter from "../components/SiteFooter";
 
 export default function Home() {
   const [redirectUrl, setRedirectUrl] = useState('');
@@ -12,12 +13,11 @@ export default function Home() {
   });
 
   const [formData, setFormData] = useState({
-    name: '', // StaticForms often expects 'name' or separate fields
+    name: '',
     email: '',
-    subject: 'New Website Inquiry', // Custom subject for your email
-    honeypot: '', // Anti-spam hidden field
+    subject: 'New Website Inquiry',
+    honeypot: '',
     message: '',
-    // Custom fields for your specific needs
     source: '',
     service: 'Anxiety',
     firstName: '',
@@ -41,7 +41,6 @@ export default function Home() {
   e.preventDefault();
   setStatus({ ...status, submitting: true });
 
-  // Change the URL to your local API route
   const res = await fetch('/api/contact', { 
     method: 'POST',
     body: JSON.stringify({
@@ -87,6 +86,7 @@ export default function Home() {
   }
 
   return (
+    <div>
     <main className="relative min-h-screen">
       <Navbar />
       <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
@@ -97,9 +97,8 @@ export default function Home() {
 
         <div className="relative z-20 w-full max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center pt-20">
           
-          {/* Left Side Content */}
           <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="text-white">
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-4">Cultivating Your <br /> Strengths & Values</h1>
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-4 font-amiri font-normal">Cultivating Your <br /> Strengths & Values</h1>
             <p className="text-xl md:text-2xl font-light mb-2 italic">Acceptance Commitment Therapy (ACT)</p>
             <p className="text-xl font-bold mb-8">Serving clients in Northern Colorado</p>
             <div className="flex gap-4">
@@ -108,7 +107,6 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* Right Side: StaticForms for Static Hosting */}
           <motion.div className="bg-black/30 backdrop-blur-xl p-8 rounded-[2rem] border border-white/20 shadow-2xl">
             <form 
               action="https://api.staticforms.xyz/submit" 
@@ -120,7 +118,6 @@ export default function Home() {
               {/* Replace with your key */}
               <input type="hidden" name="accessKey" value="sf_309l6lj7mj6h8f1f2f1e405b" />
               
-              {/* Tell StaticForms where to send the user after they hit submit */}
               <input type="hidden" name="redirectTo" value={redirectUrl} />
               {/* Anti-Spam Honeypot (Hidden from users) */}
               {/* <input type="text" name="honeypot" style={{ display: 'none' }} onChange={handleInputChange} /> */}
@@ -168,5 +165,7 @@ export default function Home() {
         </div>
       </section>
     </main>
+    <SiteFooter />
+    </div>
   );
 }
