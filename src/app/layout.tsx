@@ -35,8 +35,6 @@ export default function RootLayout({
         <Navbar />
         {/* The main page content renders here */}
         {children}
-        
-        {/* 2. Add the footer here, so it shows on every page */}
         {/* <SiteFooter /> */}
       </body>
     </html>

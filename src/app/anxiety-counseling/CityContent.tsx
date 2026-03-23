@@ -23,11 +23,11 @@ export default function CityContent({ citySlug }) {
       >
         <div className="absolute inset-0 bg-black/30"></div>
 
-        <div className="max-w-4xl w-full text-center relative z-10">
+        <div className="max-w-4xl w-full text-center relative z-10 font-amiri">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-xl md:text-2xl text-gray-100 leading-relaxed drop-shadow-md"
+            className="text-3xl md:text-4xl text-gray-100 leading-relaxed drop-shadow-md"
           >
             Anxiety Counseling and Therapy
           </motion.h1>
@@ -35,7 +35,7 @@ export default function CityContent({ citySlug }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-3xl md:text-4xl font-bold text-white mb-6 drop-shadow-lg"
+            className="text-5xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg"
           >
             Embracing Calm & Peace
           </motion.p>
@@ -44,7 +44,7 @@ export default function CityContent({ citySlug }) {
 
       <section className="py-20 px-6">
         <div className="mx-auto">
-          <h2 className="text-3xl font-bold mb-6 text-gray-900 text-center">
+          <h2 className="text-3xl font-bold mb-6 text-gray-600 text-center font-amiri">
             What type of therapy works best for anxiety?
           </h2>
           <div className="flex flex-col md:flex-row">
@@ -76,7 +76,7 @@ export default function CityContent({ citySlug }) {
 
             {/* Right: Text side */}
             <div className="w-full md:w-1/2 bg-gray-200 px-20 py-20 md:py-16 flex flex-col justify-center">
-              <h2 className="text-3xl font-bold mb-6">Managing Emotions and Finding Peace</h2>
+              <h2 className="text-3xl font-bold mb-6 text-gray-600 font-amiri">Managing Emotions and Finding Peace</h2>
               <p className="text-gray-700 text-lg mb-8">
                 Anxiety can be overwhelming and make it difficult to enjoy life or achieve your goals. At Brightness of Hope Counseling, we offer anxiety counseling to help you find calm and confidence in the face of anxiety. Our licensed therapist is trained in evidence-based therapies to address the unique needs of each client. 
               </p>
