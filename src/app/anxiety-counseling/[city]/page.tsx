@@ -11,10 +11,9 @@ export async function generateStaticParams() {
   ];
 }
 
-export async function generateMetadata({ params }) {
-  // Await params here too!
+export async function generateMetadata({ params }: any) {
   const { city } = await params; 
-  const displayCity = city.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+  const displayCity = city.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
   
   return {
     title: `Anxiety Counseling in ${displayCity}, CO | ACT Therapy`,
@@ -22,14 +21,12 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default async function Page({ params }) {
-  // 1. Await the params
+export default async function Page({ params }: any) {
   const { city } = await params;
 
   return (
     <main className="bg-white min-h-screen">
       <Navbar />
-      {/* 2. Pass the awaited city string */}
       <CityContent citySlug={city} />
     </main>
   );

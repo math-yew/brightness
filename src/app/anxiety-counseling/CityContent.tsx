@@ -2,10 +2,9 @@
 import { motion } from 'framer-motion';
 import ServiceFooter from "../../components/ServiceFooter";
 
-export default function CityContent({ citySlug }) {
+export default function CityContent({ citySlug }: any) {
   if (!citySlug) return null;
 
-  // Formatting "fort-collins" -> "Fort Collins"
   const cityName = citySlug
     .split('-')
     .map((word:string) => word.charAt(0).toUpperCase() + word.slice(1))
@@ -44,7 +43,7 @@ export default function CityContent({ citySlug }) {
 
       <section className="py-20 px-6">
         <div className="mx-auto">
-          <h2 className="text-3xl font-bold mb-6 text-gray-600 text-center font-amiri">
+          <h2 className="text-3xl font-bold mb-0 text-gray-600 text-center font-amiri">
             What type of therapy works best for anxiety?
           </h2>
           <div className="flex flex-col md:flex-row">
@@ -59,32 +58,29 @@ export default function CityContent({ citySlug }) {
       </section>
 
       <section className="bg-gray-350 shadow-xl">
-        {/* <div className="max-w-5xl mx-auto shadow-xl rounded-xl overflow-hidden bg-white"> */}
-          <div className="flex flex-col md:flex-row items-stretch">
-            {/* Left: Image – now with aspect-ratio so it never collapses */}
-            <div 
-              className="
-                w-full 
-                md:w-1/2 
-                bg-cover bg-center bg-no-repeat
-                aspect-[4/3]          /* ← mobile fallback shape – change to taste: 4/3, 3/2, 1/1, 5/4, etc */
-                md:aspect-auto        /* desktop: stretch full height of row */
-                min-h-[280px]         /* minimum mobile height as safety net */
-              "
-              style={{ backgroundImage: `url('tulips.jpg')` }}
-            />
+        <div className="flex flex-col md:flex-row items-stretch">
+          <div 
+            className="
+              w-full 
+              md:w-1/2 
+              bg-cover bg-center bg-no-repeat
+              aspect-[4/3]
+              md:aspect-auto
+              min-h-[280px]
+            "
+            style={{ backgroundImage: `url('tulips.jpg')` }}
+          />
 
-            {/* Right: Text side */}
-            <div className="w-full md:w-1/2 bg-gray-200 px-20 py-20 md:py-16 flex flex-col justify-center">
-              <h2 className="text-3xl font-bold mb-6 text-gray-600 font-amiri">Managing Emotions and Finding Peace</h2>
-              <p className="text-gray-700 text-lg mb-8">
-                Anxiety can be overwhelming and make it difficult to enjoy life or achieve your goals. At Brightness of Hope Counseling, we offer anxiety counseling to help you find calm and confidence in the face of anxiety. Our licensed therapist is trained in evidence-based therapies to address the unique needs of each client. 
-              </p>
-              <p className="text-gray-700 text-lg">
-                We know that anxiety is frustrating and it can cause more anxiety just by worrying about the anxiety. Let us help you learn skills that will enable mindful, value-based living in a calm and relaxed setting. With our support, you can learn to overcome your anxiety and live a fulfilling life.
-              </p>
-            </div>
+          <div className="w-full md:w-1/2 bg-gray-200 px-20 py-20 md:py-16 flex flex-col justify-center">
+            <h2 className="text-3xl font-bold mb-6 text-gray-600 font-amiri">Managing Emotions and Finding Peace</h2>
+            <p className="text-gray-700 text-lg mb-8">
+              Anxiety can be overwhelming and make it difficult to enjoy life or achieve your goals. At Brightness of Hope Counseling, we offer anxiety counseling to help you find calm and confidence in the face of anxiety. Our licensed therapist is trained in evidence-based therapies to address the unique needs of each client. 
+            </p>
+            <p className="text-gray-700 text-lg">
+              We know that anxiety is frustrating and it can cause more anxiety just by worrying about the anxiety. Let us help you learn skills that will enable mindful, value-based living in a calm and relaxed setting. With our support, you can learn to overcome your anxiety and live a fulfilling life.
+            </p>
           </div>
+        </div>
       </section>
       <ServiceFooter />
     </div>
