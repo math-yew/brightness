@@ -1,6 +1,6 @@
 "use client";
 import { motion } from 'framer-motion';
-import ServiceFooter from "../../components/ServiceFooter";
+import ServiceFooter from "../../../components/ServiceFooter";
 
 export default function CityContent({ citySlug }: any) {
   if (!citySlug) return null;

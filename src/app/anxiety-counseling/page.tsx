@@ -1,6 +1,6 @@
 // src/app/anxiety-counseling/page.tsx
 import Navbar from '../../components/Navbar';
-import CityContent from './CityContent';
+import CityContent from './../[city]/anxiety-counseling/CityContent';
 
 export const metadata = {
   title: 'Anxiety Counseling in Northern Colorado | ACT Therapy',

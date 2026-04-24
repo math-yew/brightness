@@ -1,6 +1,5 @@
-// src/app/anxiety-counseling/[city]/page.tsx
-import Navbar from '../../../components/Navbar';
-import CityContent from '../CityContent';
+import Navbar from '../../../components/Navbar'; 
+import CityContent from './CityContent';
 
 export async function generateStaticParams() {
   return [
@@ -11,9 +10,9 @@ export async function generateStaticParams() {
   ];
 }
 
-export async function generateMetadata({ params }: any) {
-  const { city } = await params; 
-  const displayCity = city.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+export async function generateMetadata({ params }) {
+  const { city } = await params;
+  const displayCity = city.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
   
   return {
     title: `Anxiety Counseling in ${displayCity}, CO | ACT Therapy`,
@@ -21,12 +20,12 @@ export async function generateMetadata({ params }: any) {
   };
 }
 
-export default async function Page({ params }: any) {
+export default async function Page({ params }) {
   const { city } = await params;
 
   return (
     <main className="bg-white min-h-screen">
-      <Navbar />
+      {/* Navbar is already in layout.tsx, but if you have it here, keep the import correct */}
       <CityContent citySlug={city} />
     </main>
   );

@@ -406,36 +406,39 @@ export default function Home() {
 
       {/* Support Section */}
       <section className="w-full bg-white py-24">
-        <div className="w-full grid md:grid-cols-12 items-center">
+        <div className="flex flex-col md:flex-row items-center">
           
-          {/* Left Column: Image (Spans 7 columns) */}
+          {/* Left: Image */}
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="md:col-span-7 relative z-0"
+            className="w-full md:w-[50%] md:flex-shrink-0 relative z-0"
           >
             <img 
               src="/butterfly.jpg" 
               alt="Butterfly landing on hand" 
-              className="w-full h-full object-cover"
+              className="w-full h-64 md:h-full object-cover block"
             />
           </motion.div>
 
-          {/* Right Column: Content Card (Spans 6 columns, overlaps by 1) */}
+          {/* Right: Card — overlaps on desktop, stacks below on mobile */}
           <motion.div 
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="md:col-span-5 md:-ml-24 relative z-10 bg-white p-10 md:p-16 shadow-2xl h-[80%]"
+            className="relative z-10 bg-white p-8 md:p-16 shadow-2xl 
+                      w-[90%] md:w-auto 
+                      -mt-12 md:mt-12 md:-ml-16 md:my-12
+                      mx-auto md:mx-0"
           >
-            <h2 className="text-4xl md:text-5xl font-normal font-amiri text-gray-800 mb-8 leading-tight">
+            <h2 className="text-3xl md:text-5xl font-normal font-amiri text-gray-800 mb-6 md:mb-8 leading-tight">
               Offering the Support You Need
             </h2>
             
-            <div className="space-y-6 text-gray-600 leading-relaxed font-light text-lg mb-10">
+            <div className="text-gray-600 leading-relaxed font-light text-base md:text-lg mb-8 md:mb-10">
               <p>
                 At Brightness of Hope Counseling, we believe that every individual has 
                 the potential for growth, healing, and empowerment. Our goal is to 
@@ -446,13 +449,13 @@ export default function Home() {
                 Reach out today and get started on the path to healing.
               </p>
             </div>
-
             <div>
               <button className="bg-[#8fa189] hover:bg-[#7d8f77] text-white px-10 py-3 rounded-full font-medium transition-colors shadow-md">
                 Connect With Us
               </button>
             </div>
           </motion.div>
+
         </div>
       </section>
 
@@ -727,15 +730,15 @@ export default function Home() {
 
       {/* Trauma to Triumph Section */}
       <section className="w-full bg-white py-24 px-6">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-12 items-center">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-stretch">
           
-          {/* Left Column: Image (Spans 7 columns) */}
+          {/* Left: Image */}
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="md:col-span-7 relative z-0 h-[500px]"
+            className="w-full md:w-1/2 relative z-0 h-64 md:h-auto"
           >
             <img 
               src="/iron bars.png" 
@@ -744,13 +747,14 @@ export default function Home() {
             />
           </motion.div>
 
-          {/* Right Column: Content Card (Spans 6 columns, overlaps by 1) */}
+          {/* Right: Content Card */}
           <motion.div 
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="md:col-span-6 md:-ml-24 relative z-10 bg-[#f4f4f4] p-10 md:p-16 shadow-2xl"
+            className="w-full md:w-1/2 relative z-10 bg-[#f4f4f4] p-10 md:p-16 shadow-2xl
+                      -mt-8 md:mt-0 md:-ml-8"
           >
             <h2 className="text-4xl md:text-5xl font-normal font-amiri text-[#8fa189] mb-8 leading-tight">
               From Trauma to Triumph
@@ -783,6 +787,7 @@ export default function Home() {
               </button>
             </div>
           </motion.div>
+
         </div>
       </section>
 
