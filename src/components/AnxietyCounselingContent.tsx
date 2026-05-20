@@ -1,14 +1,12 @@
 "use client";
 import { motion } from 'framer-motion';
-import ServiceFooter from "../../../components/ServiceFooter";
+import ServiceFooter from "./ServiceFooter";
+import { formatCityName } from '../lib/cities';
 
-export default function CityContent({ citySlug }: any) {
+export default function AnxietyCounselingContent({ citySlug }: any) {
   if (!citySlug) return null;
 
-  const cityName = citySlug
-    .split('-')
-    .map((word:string) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ');
+  const cityName = formatCityName(citySlug);
 
   return (
     

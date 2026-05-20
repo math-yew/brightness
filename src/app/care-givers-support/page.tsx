@@ -1,7 +1,7 @@
 // src/app/anxiety-counseling/page.tsx
 import Navbar from '../../components/Navbar';
-// import AnxietyCounselingContent from './../[city]/anxiety-counseling/AnxietyCounselingContent';
-import AnxietyCounselingContent from '../../components/AnxietyCounselingContent';
+import CareGiversContent from '../../components/CareGiversContent';
+// import CareGiversContent from '../[city]/anxiety-counseling/CareGiversContent';
 
 export const metadata = {
   title: 'Anxiety Counseling in Northern Colorado | ACT Therapy',
@@ -13,7 +13,7 @@ export default function AnxietyDefaultPage() {
     <main className="bg-white min-h-screen">
       <Navbar />
       {/* We pass a specific string or null to indicate it's the general page */}
-      <AnxietyCounselingContent citySlug="northern-colorado" />
+      <CareGiversContent citySlug="northern-colorado" />
     </main>
   );
 }
