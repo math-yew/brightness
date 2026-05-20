@@ -23,7 +23,7 @@ export default function SiteFooter() {
     <footer className="w-full bg-white font-montserrat">
       
       {/* ================= SECTION 1: Video & Contact Form ================= */}
-      <section className="max-w-7xl mx-auto grid md:grid-cols-2 py-16 px-6 gap-12">
+      <section className="max-w-7xl mx-auto grid md:grid-cols-2 py-16 px-6 gap-12" id="contact">
         
         {/* Left Column: Video Plant */}
         <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-xl">

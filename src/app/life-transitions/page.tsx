@@ -1,5 +1,5 @@
 import Navbar from '../../components/Navbar';
-import AnxietyCounselingContent from './../../components/AnxietyCounselingContent';
+import LifeTransitions from './../../components/LifeTransitions';
 
 export const metadata = {
   title: 'Anxiety Counseling in Northern Colorado | ACT Therapy',
@@ -10,7 +10,7 @@ export default function AnxietyDefaultPage() {
   return (
     <main className="bg-white min-h-screen">
       <Navbar />
-      <AnxietyCounselingContent citySlug="northern-colorado" />
+      <LifeTransitions citySlug="northern-colorado" />
     </main>
   );
 }

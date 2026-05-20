@@ -1,6 +1,5 @@
 import { CITIES, formatCityName } from '../../../lib/cities';
-import AnxietyCounselingContent from '../../../components/AnxietyCounselingContent';
-import Navbar from '../../../components/Navbar'; 
+import GriefAndLossCounselingContent from '../../../components/GriefAndLossCounselingContent';
 
 export async function generateStaticParams() {
   return CITIES;
@@ -16,7 +15,7 @@ export async function generateMetadata({ params }: any) {
   };
 }
 
-export default async function AnxietyCounselingCityPage({ params }: any) {
+export default async function GriefAndLossCounselingCityPage({ params }: any) {
   const { city } = await params;
-  return <AnxietyCounselingContent citySlug={city} />;
+  return <GriefAndLossCounselingContent citySlug={city} />;
 }

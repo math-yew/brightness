@@ -12,20 +12,24 @@ export default function Navbar() {
 
   const serviceLinks = [
     { name: 'Anxiety Counseling', href: '/anxiety-counseling' },
-    { name: 'Care Givers Support', href: '#' },
-    { name: 'Depression Counseling', href: '#' },
-    { name: 'Divorce Counseling', href: '#' },
-    { name: 'Grief & Loss Counseling', href: '#' },
-    { name: 'Life Transitions Counseling', href: '#' },
-    { name: 'Stress Counseling', href: '#' },
-    { name: 'Trauma Counseling', href: '#' },
+    { name: 'Care Givers Support', href: '/care-givers-support' },
+    { name: 'Depression Counseling', href: '/depression-counseling' },
+    { name: 'Divorce Counseling', href: '/divorce-counseling' },
+    { name: 'Grief & Loss Counseling', href: '/grief-and-loss-counseling' },
+    { name: 'Life Transitions Counseling', href: '/life-transitions' },
+    { name: 'Stress Counseling', href: '/stress-counseling' },
+    { name: 'Trauma Counseling', href: 'trauma-counselling' },
   ];
 
   const mainLinks = [
-    { name: 'Telehealth', href: '#' },
-    { name: 'Price and Policy', href: '#' },
-    { name: 'Blogs', href: '#' },
-    { name: 'Contact', href: '#' },
+    { 
+      name: 'Telehealth', 
+      href: 'https://sessions.psychologytoday.com/susan-c-merrill', 
+      newTab: true 
+    },
+    { name: 'Price and Policy', href: '/#price-and-policy' }, // Absolute anchor link
+    { name: 'Blogs', href: '/#blogs' },                     // Absolute anchor link
+    { name: 'Contact', href: '/#contact' },                 // Absolute anchor link
   ];
 
   return (
@@ -80,7 +84,9 @@ export default function Navbar() {
           </div>
 
           {mainLinks.map((link, idx) => (
-            <Link key={idx} href={link.href} className="hover:text-emerald-700 transition-colors py-8">{link.name}</Link>
+            <Link key={idx} href={link.href} className="hover:text-emerald-700 transition-colors py-8"
+            target={link.newTab ? "_blank" : undefined}
+            rel={link.newTab ? "noopener noreferrer" : undefined}>{link.name}</Link>
           ))}
         </div>
 

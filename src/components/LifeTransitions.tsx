@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import ServiceFooter from "./ServiceFooter";
 import { formatCityName } from '../lib/cities';
 
-export default function AnxietyCounselingContent({ citySlug }: any) {
+export default function LifeTransitions({ citySlug }: any) {
   if (!citySlug) return null;
   const cityName = formatCityName(citySlug);
   

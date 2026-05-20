@@ -1173,7 +1173,7 @@ export default function Home() {
       </section>
 
       {/* Pricing and Policy Section */}
-      <section className="relative w-full py-24 overflow-hidden min-h-[600px] flex items-center">
+      <section className="relative w-full py-24 overflow-hidden min-h-[600px] flex items-center" id="price-and-policy">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
@@ -1239,7 +1239,7 @@ export default function Home() {
 
 
       {/* Blogs Section */}
-      <section className="w-full bg-white py-24 px-6">
+      <section className="w-full bg-white py-24 px-6" id="blogs">
         <div className="max-w-6xl mx-auto text-center">
           
           <h2 className="text-4xl font-normal font-amiri text-[#8fa189] mb-12">

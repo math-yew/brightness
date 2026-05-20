@@ -6,7 +6,7 @@ export async function generateStaticParams() {
   return CITIES;
 }
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata({ params }: any) {
   const { city } = await params;
   const displayCity = formatCityName(city);
   
@@ -16,7 +16,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default async function CareGiversCityPage({ params }) {
+export default async function CareGiversCityPage({ params }: any) {
   const { city } = await params;
   return <CareGiversContent citySlug={city} />;
 }
